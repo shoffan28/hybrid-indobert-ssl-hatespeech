@@ -1,0 +1,42 @@
+seed: 42
+
+paths:
+  raw_dir: data/raw
+  processed_dir: data/processed
+  results_dir: results
+  idhsd: data/raw/IDHSD_RIO_unbalanced_713_2017.txt
+  hs572: data/raw/572-hate-speech-dataset.csv
+  re_dataset: data/raw/re_dataset.csv
+  kamusalay: data/raw/new_kamusalay.csv
+  abusive: data/raw/abusive.csv
+
+data:
+  text_col: clean_text
+  label_col: label
+  test_size: 0.20
+  val_size: 0.10
+  label_fractions: [0.05, 0.10, 0.20]
+
+model:
+  indobert: indobenchmark/indobert-base-p1
+  mbert: bert-base-multilingual-cased
+  xlm_roberta: xlm-roberta-base
+  indobertweet: indolem/indobertweet-base-uncased
+  max_len: 128
+  batch_size: 8
+  epochs_transformer: 5
+  epochs_deep: 10
+  learning_rate: 0.00002
+
+features:
+  word_tfidf_max_features: 50000
+  char_tfidf_max_features: 30000
+  word_svd_dim: 64
+  char_svd_dim: 64
+
+ssl:
+  rounds: 2
+  tau0: 0.92
+  tau_min: 0.70
+  decay: 0.05
+  class_balance: true
