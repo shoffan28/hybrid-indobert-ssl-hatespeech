@@ -1,0 +1,12 @@
+numpy
+pandas
+scikit-learn
+matplotlib
+tqdm
+PyYAML
+torch
+transformers
+datasets
+accelerate
+sentencepiece
+openai
