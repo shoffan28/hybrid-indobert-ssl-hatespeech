@@ -1,0 +1,2 @@
+Model,Split,Accuracy,Macro_F1,Macro_Precision,Macro_Recall,Notes
+gpt-4o-mini,test,,,,,Fill after running LLM evaluation
