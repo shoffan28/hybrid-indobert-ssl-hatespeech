@@ -4,24 +4,29 @@ This repository provides the reproducibility package for the manuscript:
 
 **Hybrid Feature-Enhanced IndoBERT with Controlled Semi-Supervised Learning for Low-Resource Indonesian Hate Speech Detection**
 
+## Authors
+
+* Shoffan Saifullah
+* Rafał Dreżewski
+
 ## Contents
 
-- Main experiment notebooks for preprocessing, hybrid feature extraction, Hybrid IndoBERT, and controlled SSL.
-- Baseline notebooks for SVM, Logistic Regression, Decision Tree, Random Forest, CNN, LSTM, IndoBERT, mBERT, XLM-RoBERTa, IndoBERTweet/XLM-IndoBERT, and naive pseudo-labeling.
-- LLM evaluation template requested by the editor.
-- Result tables and figures corresponding to the manuscript.
-- Generative AI declaration.
+* Main experiment notebooks for preprocessing, hybrid feature extraction, Hybrid IndoBERT, and controlled semi-supervised learning (SSL).
+* Baseline notebooks for SVM, Logistic Regression, Decision Tree, Random Forest, CNN, LSTM, IndoBERT, mBERT, XLM-RoBERTa, IndoBERTweet/XLM-IndoBERT, and naive pseudo-labeling.
+* LLM evaluation template requested during peer review.
+* Result tables and manuscript figures.
+* Generative AI declaration.
 
-## Structure
+## Repository Structure
 
 ```text
-configs/                  YAML configuration
-data/raw/                 Raw datasets; not redistributed
+configs/                  YAML configuration files
+data/raw/                 Raw datasets (not redistributed)
 data/processed/           Processed outputs
 notebooks/main/           Main paper experiment notebooks
 notebooks/baselines/      Baseline experiment notebooks
 scripts/                  Script entry points
-src/                      Modular utilities
+src/                      Modular source utilities
 results/tables/           CSV versions of manuscript tables
 results/figures/          Manuscript figures
 manuscript_snippets/      LaTeX snippets for manuscript revision
@@ -39,7 +44,7 @@ new_kamusalay.csv
 abusive.csv
 ```
 
-Raw datasets are not redistributed because they may be governed by their original licenses.
+Raw datasets are not redistributed because they may be governed by their original licenses and usage restrictions.
 
 ## Main Notebooks
 
@@ -74,7 +79,7 @@ results/tables/internal_variant_results.csv
 results/tables/llm_evaluation_results_TEMPLATE.csv
 ```
 
-## Setup
+## Installation
 
 ```bash
 pip install -r requirements.txt
@@ -87,10 +92,20 @@ export OPENAI_API_KEY="your_api_key"
 python scripts/04_run_llm_eval.py --config configs/default.yaml --model gpt-4o-mini
 ```
 
+## Reproducibility Notes
+
+* Experiments were conducted using fixed random seeds where applicable.
+* Configuration files are provided in `configs/`.
+* GPU acceleration is recommended for transformer-based experiments.
+
 ## Code Availability Statement
 
-Use this GitHub URL in the manuscript after upload:
+Use the following GitHub URL in the manuscript after publication:
 
 ```latex
 \url{https://github.com/shoffan28/hybrid-indobert-ssl-hatespeech}
 ```
+
+## License
+
+This project is distributed under the terms of the LICENSE file included in this repository.
